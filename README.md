@@ -1,7 +1,7 @@
-# TinyCircuits Whisker Piezo
+# TinyCircuits Whisker Buzzer
 # AST1035 Rev1
 
-The design files are located under design_files/ for the TinyCircuits AST1035 Rev 1 PCB. This is a whisker board which features a simple Piezo-Electric buzzer to give your projects a voice in the form of a variety of tones.
+The design files are located under design_files/ for the TinyCircuits AST1035 Rev 1 PCB. This is a whisker board which features a simple Electric buzzer to give your projects a voice in the form of a variety of tones.
 
 Format is in Cadsoft Eagle format - Eagle version 6.2 was used for the original design.
 
