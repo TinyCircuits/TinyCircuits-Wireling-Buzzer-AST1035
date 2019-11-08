@@ -1,4 +1,4 @@
-# TinyCircuits Whisker Buzzer
+# TinyCircuits Wireling Buzzer
 # AST1035 Rev1
 
 The design files are located under design_files/ for the TinyCircuits AST1035 Rev 1 PCB. This is a whisker board which features a simple Electric buzzer to give your projects a voice in the form of a variety of tones.
