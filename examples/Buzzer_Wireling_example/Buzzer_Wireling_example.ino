@@ -12,6 +12,7 @@
  
 #include "pitches.h"
 const int port = A0; // A0 for port 0 on Wireling Adapter, A1 for port 1, etc
+const int powerPin = 4;  // Power to Wireling
 
 // Notes in the melody:
 int melody[] = {
@@ -24,6 +25,10 @@ int noteDurations[] = {
 };
 
 void setup() {
+  // Power Wireling
+  pinMode(powerPin, OUTPUT);
+  digitalWrite(powerPin, HIGH);
+  
   // Iterate over the notes of the melody:
   for (int thisNote = 0; thisNote < 8; thisNote++) {
 
