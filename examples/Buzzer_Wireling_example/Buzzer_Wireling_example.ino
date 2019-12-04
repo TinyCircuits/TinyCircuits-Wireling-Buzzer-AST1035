@@ -7,12 +7,15 @@
  * https://www.arduino.cc/en/Tutorial/toneMelody
  *
  * Hardware by: TinyCircuits
- * Written by: Zachary Lee 7/31/19 for TinyCircuits
+ * Written by: Zachary Lee for TinyCircuits
+ * 
+ * Initialized: 7/31/19 
+ * Last updated: 12/04/19
  ************************************************************************/
- 
+
+#include <Wireling.h> // Interface with Wirelings 
 #include "pitches.h"
-const int port = A0; // A0 for port 0 on Wireling Adapter, A1 for port 1, etc
-const int powerPin = 4;  // Power to Wireling
+const int pin = A0; // A0 for port 0 on Wireling Adapter, A1 for port 1, etc
 
 // Notes in the melody:
 int melody[] = {
@@ -25,9 +28,8 @@ int noteDurations[] = {
 };
 
 void setup() {
-  // Power Wireling
-  pinMode(powerPin, OUTPUT);
-  digitalWrite(powerPin, HIGH);
+  // Power & initialize Wireling
+  Wireling.begin();
   
   // Iterate over the notes of the melody:
   for (int thisNote = 0; thisNote < 8; thisNote++) {
@@ -35,7 +37,7 @@ void setup() {
     // To calculate the note duration, take one second divided by the note type.
     // Ex. quarter note = 1000 / 4, eighth note = 1000/8, etc.
     int noteDuration = 1000 / noteDurations[thisNote];
-    tone(port, melody[thisNote], noteDuration);
+    tone(pin, melody[thisNote], noteDuration);
 
     // To distinguish the notes, set a minimum time between them.
     // the note's duration + 30% seems to work well:
